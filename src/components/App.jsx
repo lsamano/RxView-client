@@ -8,6 +8,7 @@ import {
   handlePendingSignIn,
   signUserOut,
 } from 'blockstack';
+import { Switch, Route } from 'react-router-dom';
 
 export default class App extends Component {
 
@@ -17,7 +18,8 @@ export default class App extends Component {
 
   handleSignIn(e) {
     e.preventDefault();
-    redirectToSignIn();
+    const origin = window.location.origin
+    redirectToSignIn(origin, origin + '/manifest.json', ['store_write', 'publish_data'])
   }
 
   handleSignOut(e) {
@@ -31,7 +33,15 @@ export default class App extends Component {
         <div className="site-wrapper-inner">
           { !isUserSignedIn() ?
             <Signin handleSignIn={ this.handleSignIn } />
-            : <Profile handleSignOut={ this.handleSignOut } />
+              :
+            <Switch>
+              <Route
+                path='/:username?'
+                render={
+                  routeProps => <Profile handleSignOut={ this.handleSignOut } {...routeProps} />
+                }
+              />
+            </Switch>
           }
         </div>
       </div>
