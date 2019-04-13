@@ -20,6 +20,7 @@ export default class App extends Component {
     e.preventDefault();
     const origin = window.location.origin
     redirectToSignIn(origin, origin + '/manifest.json', ['store_write', 'publish_data'])
+    window.location = "/"
   }
 
   handleSignOut(e) {
