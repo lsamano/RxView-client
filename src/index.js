@@ -5,6 +5,7 @@ import App from './components/App.jsx';
 import {Provider} from 'react-redux'
 import reducer from './Redux/reducer'
 import thunk from 'redux-thunk';
+// import Login from `./components/Login`;
 
 /// Require Sass file so webpack can build it
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';

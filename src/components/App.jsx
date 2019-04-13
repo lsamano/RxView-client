@@ -1,6 +1,7 @@
 import React, { Component, Link } from 'react';
 import Profile from './Profile.jsx';
 import Signin from './Signin.jsx';
+import Login from './Login.jsx';
 import {
   isSignInPending,
   isUserSignedIn,
@@ -35,6 +36,8 @@ export default class App extends Component {
             <Signin handleSignIn={ this.handleSignIn } />
               :
             <Switch>
+              <Route path="/login" render={() => <Login name="Login" />} />
+
               <Route
                 path='/:username?'
                 render={

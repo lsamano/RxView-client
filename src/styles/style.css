@@ -33,3 +33,29 @@
  /* Statuses */
  .statuses{padding-top:30px;}
  .status{margin:15px 0px;padding:20px;background-color:#2e2e2e;border-radius:6px}
+
+ .login_container {
+   margin: 0 auto;
+   padding: 50px;
+   background: white;
+   width: 50%;
+   border-radius: 2%;
+   border: 3px solid #ff6666;
+   color: #C0C0C0;
+   letter-spacing: 3px;
+ }
+
+ .login_container input {
+   text-align: center;
+ }
+
+ .login_container button {
+   font-size: 18px;
+   border: 1px solid #C0C0C0;
+   border-radius: 2%;
+ }
+
+ .login_container h1 {
+   color: #ff6666;
+   letter-spacing: 5px;
+ }
